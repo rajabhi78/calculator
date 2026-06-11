@@ -786,7 +786,8 @@ fun CalculatorDisplay(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .align(Alignment.BottomEnd),
+                .align(Alignment.BottomEnd)
+                .verticalScroll(rememberScrollState()),
             horizontalAlignment = Alignment.End
         ) {
             // Expression formula input line (styled with monospace numbers)
@@ -799,8 +800,7 @@ fun CalculatorDisplay(
                     color = if (isDark) LightGray else LiteTextSecondary,
                     textAlign = TextAlign.End
                 ),
-                maxLines = 2,
-                overflow = TextOverflow.Ellipsis
+                maxLines = Int.MAX_VALUE
             )
 
             Spacer(modifier = Modifier.height(4.dp))
@@ -816,7 +816,7 @@ fun CalculatorDisplay(
                         color = if (isDark) PureWhite else LiteTextPrimary,
                         textAlign = TextAlign.End
                     ),
-                    maxLines = 1,
+                    maxLines = Int.MAX_VALUE,
                     modifier = Modifier.testTag("result_display_text")
                 )
             } else if (preview.isNotEmpty()) {
@@ -829,7 +829,7 @@ fun CalculatorDisplay(
                         color = (if (isDark) CyanAccent else LiteAccent).copy(alpha = 0.85f),
                         textAlign = TextAlign.End
                     ),
-                    maxLines = 1
+                    maxLines = Int.MAX_VALUE
                 )
             } else {
                 Text(
