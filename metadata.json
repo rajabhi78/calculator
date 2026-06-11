@@ -1,0 +1,6 @@
+{
+  "name": "Calculator",
+  "description": "A premium, modern, professional calculator application featuring basic and scientific operations, persistent calculation history, and glassmorphism-inspired themes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
